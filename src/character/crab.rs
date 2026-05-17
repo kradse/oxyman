@@ -64,22 +64,9 @@ fn spawn_crabs(
             config.y_pos(maze.starting_position.y), 
             1000.
         ).with_scale(Vec3::new(
-            config.scale as f32, 
-            config.scale as f32, 
+            config.scale_f32(), 
+            config.scale_f32(), 
             0.)
         ),
     ));
 }
-// fn move_crabs(
-//     query: Query<(&mut Transform, &Crab)>,
-//     config: Res<Config>,
-//     time: Res<Time>,
-// ) {
-//     let stop_at = -config.scaled_size_f32();
-
-//     for (mut transform, crab) in query {
-//         if transform.translation.x > stop_at {
-//             transform.translation.x -= crab.speed * time.delta_secs();
-//         }
-//     }
-// }

@@ -30,10 +30,10 @@ impl Config {
         self.scaled_size() as f32
     }
     pub fn x_pos(&self, x: f32) -> f32 {
-        self.scaled_size_f32() * x as f32
+        self.scaled_size_f32() * x
     }
     pub fn y_pos(&self, y: f32) -> f32 {
-        -(self.scaled_size_f32() * y as f32)
+        -(self.scaled_size_f32() * y)
     }
 
 	// Private functions

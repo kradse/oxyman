@@ -10,15 +10,15 @@ use crate::{
 
 #[derive(Component)]
 pub struct Tile {
-    kind: TileKind,
+    _kind: TileKind,
 }
 impl Tile {
     // Constants
 	// Constructors
-    pub fn from_kind(kind: TileKind) -> Self {
+    pub fn from_kind(_kind: TileKind) -> Self {
         // TODO: This will do for now, but do refactor this as we get more types :)
         Self { 
-            kind,
+            _kind,
         }
     }
 	// Public functions
@@ -46,7 +46,7 @@ impl TryFrom<u8> for TileKind {
         match value {
             0 => Ok(TileKind::Floor),
             1 => Ok(TileKind::Wall),
-            n => Err(format!("Ukendt tile-værdi: {n}")),
+            n => Err(format!("unknown tile-value: {n}")),
         }
     }
 }
